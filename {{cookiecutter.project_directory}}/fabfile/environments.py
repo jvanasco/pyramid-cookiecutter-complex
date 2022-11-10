@@ -42,7 +42,8 @@ def env_set_environment(c):
         raise ValueError("invalid `environment`")
     _root = constants.get_root(c)
     with c.cd(
-        "%s/%s/src/{{cookiecutter.repo_name}}_pyramid/static/" % (_root, constants.LOCALPATH_pyramid)
+        "%s/%s/src/{{cookiecutter.repo_name}}_pyramid/static/"
+        % (_root, constants.LOCALPATH_pyramid)
     ):
         c.run("rm -rf ./-dist")
         if constants.environment == "development":

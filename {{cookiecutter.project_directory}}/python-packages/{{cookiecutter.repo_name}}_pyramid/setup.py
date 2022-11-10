@@ -15,21 +15,31 @@ with open(os.path.join(os.path.dirname(__file__), "README.txt")) as r_file:
 
 # store version in the init.py
 with open(
-    os.path.join(os.path.dirname(__file__), "src", "{{cookiecutter.repo_name}}_core", "__init__.py")
+    os.path.join(
+        os.path.dirname(__file__),
+        "src",
+        "{{cookiecutter.repo_name}}_pyramid",
+        "__init__.py",
+    )
 ) as v_file:
     VERSION = re.compile(r'.*__VERSION__ = "(.*?)"', re.S).match(v_file.read()).group(1)
 
-install_requires = []
+install_requires = [
+    "pyramid_sqlassist",
+    "pyramid<2",  # for `reify`
+    "SQLAlchemy>1.4.7",  # 1.4.7 required for `transaction`
+]
+
 tests_require = []
 
 setup(
-    name="{{cookiecutter.repo_name}}_model",
-    author="{{cookiecutter.author_name}},
+    name="{{cookiecutter.repo_name}}_pyramid",
+    author="{{cookiecutter.author_name}}",
     author_email="{{cookiecutter.author_email}}",
     version=VERSION,
     url="",
-    py_modules=["{{cookiecutter.repo_name}}_core"],
-    description="core utils",
+    py_modules=["{{cookiecutter.repo_name}}_pyramid"],
+    description="pyramid app",
     long_description=README,
     zip_safe=False,
     keywords="",

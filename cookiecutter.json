@@ -1,5 +1,6 @@
 {
     "project_name": "Pyramid Complex Scaffold",
+    "project_directory": "{{cookiecutter.project_name.strip().replace(' ', '_').replace(':', '_').replace('-', '_').replace('!', '_')}}",
     "repo_name": "{{cookiecutter.project_name.lower().strip().replace(' ', '_').replace(':', '_').replace('-', '_').replace('!', '_')}}",
     "env_base": "{{cookiecutter.project_name.upper().strip().replace(' ', '_').replace(':', '_').replace('-', '_').replace('!', '_')}}",
     "_copy_without_render": [

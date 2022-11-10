@@ -22,6 +22,7 @@ def get_root(c):
               automatically dispatched by `@task`.
     """
     import {{cookiecutter.repo_name}}_core
+
     if environment == "production":
         return {{cookiecutter.repo_name}}_core.constants.FILESYSTEM_ROOTS["production"]
     elif environment == "development":

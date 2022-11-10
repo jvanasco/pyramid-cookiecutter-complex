@@ -15,7 +15,12 @@ with open(os.path.join(os.path.dirname(__file__), "README.txt")) as r_file:
 
 # store version in the init.py
 with open(
-    os.path.join(os.path.dirname(__file__), "src", "{{cookiecutter.repo_name}}_pyramid", "__init__.py")
+    os.path.join(
+        os.path.dirname(__file__),
+        "src",
+        "{{cookiecutter.repo_name}}_model",
+        "__init__.py",
+    )
 ) as v_file:
     VERSION = re.compile(r'.*__VERSION__ = "(.*?)"', re.S).match(v_file.read()).group(1)
 
@@ -28,13 +33,13 @@ install_requires = [
 tests_require = []
 
 setup(
-    name="{{cookiecutter.repo_name}}_pyramid",
-    author="{{cookiecutter.author_name}},
-    author_email="{{cookiecutter.author_email}},
+    name="{{cookiecutter.repo_name}}_model",
+    author="{{cookiecutter.author_name}}",
+    author_email="{{cookiecutter.author_email}}",
     version=VERSION,
     url="",
-    py_modules=["{{cookiecutter.repo_name}}_pyramid"],
-    description="pyramid app",
+    py_modules=["{{cookiecutter.repo_name}}_model"],
+    description="models",
     long_description=README,
     zip_safe=False,
     keywords="",

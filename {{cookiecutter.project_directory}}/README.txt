@@ -9,7 +9,17 @@ It is also recommended to utilize an encryption system like
 [Blackbox](https://github.com/StackExchange/blackbox), which would create a
 toplevel `/keyrings` directory to manage secret files.
 
-====
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+IMPORTANT:
+
+This project REQUIRES the following environment variables to be set:
+
+* `{{cookiecutter.env_base}}_ENVIRONMENT`
+  This is read by `{{cookiecutter.repo_name}}_core/constants.py`, which is
+  invoked by the Fabric management tool and most Python packages.
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 * `/assets`
   * This directory should be used for organizing project assets, such as PSDs.
@@ -26,6 +36,9 @@ toplevel `/keyrings` directory to manage secret files.
 * `/fabfile`
   * This system utilizes [Fabric](https://fabfile.org/) for installation,
     configuration and deployment.
+    
+    Type `fab -l` on the top directory structure to see a listing of the default
+    routines. These should be grown and edited with your project!
 
 * `/python-packages`
   * This layout splits a Pyramid application into 3 components:
