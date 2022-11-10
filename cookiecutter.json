@@ -1,0 +1,10 @@
+{
+    "project_name": "Pyramid Complex Scaffold",
+    "repo_name": "{{cookiecutter.project_name.lower().strip().replace(' ', '_').replace(':', '_').replace('-', '_').replace('!', '_')}}",
+    "env_base": "{{cookiecutter.project_name.upper().strip().replace(' ', '_').replace(':', '_').replace('-', '_').replace('!', '_')}}",
+    "_copy_without_render": [
+        "static/*"
+    ],
+    "author_name": "Author Name",
+    "author_email": "author@example.com"
+}

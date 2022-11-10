@@ -1,0 +1,27 @@
+Initial Setup
+
+    cd ~/dev-evn
+    which pip3
+    # if none:
+    #       see https://pip.pypa.io/en/stable/installation    
+    #       curl -O https://bootstrap.pypa.io/get-pip.py
+    #       sudo python3 get-pip.py
+    sudo pip3 install --upgrade pip
+    sudo pip3 install --upgrade virtualenv
+
+    which virtualenv
+    # if not py3:
+    
+    virtualenv {{cookiecutter.repo_name}}-3.10
+    source ~/dev-env/{{cookiecutter.repo_name}}-3.10/bin/activate
+    # virtualenv will install a version of pip tied to the stdlib;
+    #   you will almost-always want to upgrade this pip
+    pip install --upgrade pip
+    cd /Volumes/Development/webserver/sites/{{cookiecutter.repo_name}}
+    pip install fabric
+    fab -l
+    # if ValueError: must set {{cookiecutter.env_base}}_ENVIRONMENT to `production` or `development` or `staging`
+    #   export {{cookiecutter.env_base}}_ENVIRONMENT=development
+    #   fab -l
+    fab env-install-python-packages
+
